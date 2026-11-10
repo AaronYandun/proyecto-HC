@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico de reservas de catering de la Cafetería PUCE Ibarra.">
+  <title>Catering | Cafetería PUCE Ibarra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="navbar">
+    <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">C</span><span>Cafetería PUCE Ibarra<small>CATERING · PROYECTO ACADÉMICO</small></span></a>
+    <nav aria-label="Navegación principal"><a href="#servicios">Servicios</a><a href="#reserva">Reservar</a><a href="#solicitudes">Mis solicitudes</a></nav>
+  </header>
+  <main id="contenido"><noscript><p class="demo-note">Activa JavaScript para registrar y consultar solicitudes locales.</p></noscript>
+    <section class="hero container" id="inicio" aria-labelledby="titulo">
+      <div><p class="eyebrow">PARA COMPARTIR EN EL CAMPUS</p><h1 id="titulo">Un buen encuentro<br>empieza en la mesa.</h1><p class="hero-copy">Encuentra una propuesta de catering para tu reunión, jornada o celebración. Elige un servicio y prepara tu solicitud en pocos pasos.</p><a class="btn btn-primary" href="#servicios">Explorar servicios <span aria-hidden="true">↗</span></a><p class="fine-print">Catálogo y solicitudes de demostración.</p></div>
+      <aside class="hero-note" aria-label="Cómo solicitar catering"><span class="eyebrow">TU PRÓXIMO ENCUENTRO</span><h2>Planeado contigo.</h2><ol><li><strong>01</strong><span>Elige tu servicio<small>Compara lo que incluye cada propuesta.</small></span></li><li><strong>02</strong><span>Cuéntanos los detalles<small>Fecha, personas y preferencias.</small></span></li><li><strong>03</strong><span>Revisa tu solicitud<small>Comprueba los datos antes de confirmar.</small></span></li></ol></aside>
+    </section>
+    <section class="container section" id="servicios" aria-labelledby="servicios-titulo">
+      <div class="section-heading"><div><p class="eyebrow">01 / EXPLORA</p><h2 id="servicios-titulo">Una opción para cada ocasión</h2></div><p>Tres propuestas ilustrativas.<br>Los contenidos son de ejemplo.</p></div>
+      <!-- Adaptación de orders-grid y order-card del ejemplo docente. -->
+      <div class="orders-grid">
+        <article class="order-card"><div class="card-art art-coffee" aria-hidden="true"><span>01</span><span class="art-word">Una pausa<br>para conectar.</span></div><div class="card-body"><p class="eyebrow">REUNIONES Y DESCANSOS</p><h3>Pausa café</h3><p>Un momento para conversar y recargar energías entre actividades.</p><ul><li>Café o infusión</li><li>Bocadito salado y dulce</li><li>Porción individual por asistente</li></ul></div><footer class="card-footer"><button class="btn btn-outline service-choice" type="button" data-service="cafe" aria-pressed="false">Elegir Pausa café</button></footer></article>
+        <article class="order-card"><div class="card-art art-lunch" aria-hidden="true"><span>02</span><span class="art-word">Comparte<br>la jornada.</span></div><div class="card-body"><p class="eyebrow">JORNADAS ACADÉMICAS</p><h3>Almuerzo</h3><p>Una propuesta completa para acompañar los encuentros de todo el día.</p><ul><li>Plato principal de ejemplo</li><li>Guarnición y bebida</li><li>Porción individual por asistente</li></ul></div><footer class="card-footer"><button class="btn btn-outline service-choice" type="button" data-service="almuerzo" aria-pressed="false">Elegir Almuerzo</button></footer></article>
+        <article class="order-card"><div class="card-art art-snacks" aria-hidden="true"><span>03</span><span class="art-word">Pequeños<br>momentos.</span></div><div class="card-body"><p class="eyebrow">ENCUENTROS Y CELEBRACIONES</p><h3>Bocaditos</h3><p>Sabores para compartir en eventos y reuniones informales.</p><ul><li>Surtido salado</li><li>Selección de dulces</li><li>Presentación para compartir</li></ul></div><footer class="card-footer"><button class="btn btn-outline service-choice" type="button" data-service="bocaditos" aria-pressed="false">Elegir Bocaditos</button></footer></article>
+      </div>
+    </section>
+    <section class="container section" id="reserva" aria-labelledby="reserva-titulo">
+      <div class="section-heading"><div><p class="eyebrow">02 / PREPARA</p><h2 id="reserva-titulo">Cuéntanos sobre tu evento</h2></div><p>Completa los datos con información de prueba.<br>Los campos con * son obligatorios.</p></div>
+      <p class="demo-note" id="demo-aviso">Demostración académica. Los datos se guardan únicamente en localStorage de este navegador. Usa datos de prueba. Ninguna solicitud se envía a la cafetería; la disponibilidad y aprobación quedan fuera de esta demostración.</p>
+      <div class="reservation-layout">
+        <form id="reserva-form" novalidate class="panel reservation-form" aria-describedby="demo-aviso">
+          <fieldset><legend>Servicio de catering</legend><label for="servicio">Servicio *</label><select id="servicio" name="servicio" required><option value="">Selecciona un servicio</option><option value="cafe">Pausa café</option><option value="almuerzo">Almuerzo</option><option value="bocaditos">Bocaditos</option></select><p class="field-help">Puedes cambiar aquí el servicio seleccionado.</p></fieldset>
+          <fieldset><legend>Datos del cliente</legend><div class="form-grid"><div><label for="nombre">Nombre completo *</label><input id="nombre" name="nombre" autocomplete="name" required placeholder="Tu nombre"></div><div><label for="correo">Correo electrónico *</label><input id="correo" name="correo" type="email" autocomplete="email" required placeholder="nombre@example.com"></div><div><label for="telefono">Teléfono *</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required aria-describedby="telefono-ayuda"><p id="telefono-ayuda" class="field-help">Entre 7 y 15 dígitos. Puedes incluir +, espacios o guiones.</p></div></div></fieldset>
+          <fieldset><legend>Datos del evento</legend><div class="form-grid"><div><label for="fecha">Fecha del evento *</label><input id="fecha" name="fecha" type="date" required aria-describedby="fecha-ayuda"><p class="field-help" id="fecha-ayuda">Elige la fecha prevista para tu evento.</p></div><div><label for="personas">Cantidad de personas *</label><input id="personas" name="personas" type="number" min="1" step="1" required placeholder="Por ejemplo, 30" aria-describedby="personas-ayuda"><p class="field-help" id="personas-ayuda">Indica un número entero mayor que cero.</p></div></div><label for="observaciones">Observaciones <span class="optional">(opcional)</span></label><textarea id="observaciones" name="observaciones" rows="4" placeholder="Cuéntanos algún detalle de tu evento."></textarea></fieldset>
+          <button id="revisar" class="btn btn-primary" type="submit">Revisar solicitud</button>
+        </form>
+        <aside class="panel summary" aria-labelledby="resumen-titulo"><p class="eyebrow">03 / REVISA</p><h3 id="resumen-titulo" tabindex="-1">Tu solicitud, de un vistazo</h3><p id="resumen-estado">Completa el formulario para revisar.</p><dl id="resumen-datos"></dl><button id="editar" class="btn btn-outline" type="button">Editar datos</button><button id="confirmar" class="btn btn-primary" type="button" disabled>Confirmar solicitud</button><button id="nueva" class="btn btn-outline" type="button" hidden>Nueva solicitud</button><p class="field-help">El registro guarda una solicitud de demostración en este navegador.</p></aside>
+      </div>
+      <section id="confirmacion" class="confirmation" aria-labelledby="confirmacion-titulo" hidden><span class="confirmation-icon" aria-hidden="true">✓</span><div><p class="eyebrow">GUARDADA EN ESTE NAVEGADOR</p><h3 id="confirmacion-titulo" tabindex="-1">Solicitud registrada</h3><p id="confirmacion-detalle"></p><p class="field-help">Los datos se recibieron de forma local. No se ha notificado a ningún negocio.</p></div><a class="btn btn-outline" href="#solicitudes">Consultar solicitud</a></section>
+      <div id="mensajes" role="status" aria-live="polite" aria-atomic="true"></div>
+    </section>
+    <section class="container section" id="solicitudes" aria-labelledby="solicitudes-titulo"><div class="section-heading"><div><p class="eyebrow">04 / CONSULTA</p><h2 id="solicitudes-titulo">Mis solicitudes</h2></div><p>Solicitudes locales de demostración.<br>Disponibles en este navegador y origen.</p></div>
+      <form id="consulta-form" class="panel" novalidate><label for="consulta-id">Identificador de solicitud</label><div class="lookup-row"><input id="consulta-id" name="identificador" required placeholder="CAT-…" aria-describedby="consulta-error"><button class="btn btn-primary" type="submit">Consultar</button></div><p id="consulta-error" class="field-error"></p></form>
+      <p id="consulta-mensaje" role="status"></p><div id="resultado-consulta"></div>
+      <h3>Solicitudes guardadas</h3><div id="lista-solicitudes" class="requests-grid"></div>
+    </section>
+  </main>
+  <footer class="site-footer container"><p><strong>Cafetería PUCE Ibarra</strong><br>Proyecto académico · Interacción Humano Computador</p><p>Taller S7 · Reservas de catering<br>Prototipo de demostración</p></footer>
+</body>
+</html>
+

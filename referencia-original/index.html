@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Fiorella Eventos - Gestor de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente Google Fonts para jerarquía tipográfica limpia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de Navegación Principal (Nielsen #1: Estado del Sistema) -->
+    <header class="navbar">
+        <div class="brand">
+            <span class="logo-icon">🍽️</span>
+            <h1>D'Fiorella <span>Eventos</span></h1>
+        </div>
+        <div class="user-profile">
+            <span class="status-indicator online" aria-label="Estado: En línea"></span>
+            <span class="user-name">Carlos (Operador)</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="dashboard-container">
+        
+        <!-- Encabezado de la Vista y Filtros (Ley de Hick) -->
+        <section class="dashboard-header">
+            <div>
+                <h2>Panel de Control de Comandos</h2>
+                <p class="subtitle">Gestión en tiempo real de servicios de catering y banquetes.</p>
+            </div>
+            
+            <!-- Filtros de Estado -->
+            <nav class="filter-tabs" aria-label="Filtros de pedidos">
+                <button class="tab-btn active">Todos (3)</button>
+                <button class="tab-btn">Pendientes <span class="badge warning">1</span></button>
+                <button class="tab-btn">En Proceso <span class="badge info">1</span></button>
+                <button class="tab-btn">Listos <span class="badge success">1</span></button>
+            </nav>
+        </section>
+
+        <!-- Cuadrícula de Pedidos (CSS Grid / Ley de Gestalt: Proximidad) -->
+        <section class="orders-grid">
+
+            <!-- Tarjeta 1: Pendiente -->
+            <article class="order-card status-pending">
+                <header class="card-header">
+                    <span class="order-id">#ORD-1042</span>
+                    <span class="status-tag tag-pending">Pendiente</span>
+                </header>
+                <div class="card-body">
+                    <h3 class="client-name">Bodas de Oro - Familia Rivas</h3>
+                    <p class="event-time">⏰ Entrega: 14:00 PM</p>
+                    <ul class="items-list">
+                        <li><strong>50x</strong> Entrada de Mariscos</li>
+                        <li><strong>50x</strong> Lomo a la Pimienta con Vegetales</li>
+                        <li><strong>1x</strong> Tarta Nupcial 3 Pisos</li>
+                    </ul>
+                </div>
+                <footer class="card-footer">
+                    <button class="btn btn-primary">Iniciar Preparación</button>
+                </footer>
+            </article>
+
+            <!-- Tarjeta 2: En Proceso -->
+            <article class="order-card status-processing">
+                <header class="card-header">
+                    <span class="order-id">#ORD-1041</span>
+                    <span class="status-tag tag-processing">En Proceso</span>
+                </header>
+                <div class="card-body">
+                    <h3 class="client-name">Corporativo Tech Solutions</h3>
+                    <p class="event-time">⏰ Entrega: 13:30 PM</p>
+                    <ul class="items-list">
+                        <li><strong>120x</strong> Coffeescript Pack (Snacks)</li>
+                        <li><strong>120x</strong> Bebidas Frías surtidas</li>
+                    </ul>
+                </div>
+                <footer class="card-footer">
+                    <button class="btn btn-success">Marcar como Listo</button>
+                </footer>
+            </article>
+
+            <!-- Tarjeta 3: Listo -->
+            <article class="order-card status-ready">
+                <header class="card-header">
+                    <span class="order-id">#ORD-1040</span>
+                    <span class="status-tag tag-ready">Listo para Servir</span>
+                </header>
+                <div class="card-body">
+                    <h3 class="client-name">XV Años - Sofía M.</h3>
+                    <p class="event-time">⏰ Entrega: 12:00 PM</p>
+                    <ul class="items-list">
+                        <li><strong>80x</strong> Menú Infantil de Fiesta</li>
+                        <li><strong>80x</strong> Postres Variados</li>
+                    </ul>
+                </div>
+                <footer class="card-footer">
+                    <button class="btn btn-secondary" disabled>Entregado</button>
+                </footer>
+            </article>
+
+        </section>
+    </main>
+
+</body>
+</html>
